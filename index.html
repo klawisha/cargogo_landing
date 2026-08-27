@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080d13" id="themeColor" />
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem("cargogo-theme")||"dark"}catch(e){}</script>
+  <meta name="description" content="CargoGo connects cargo owners and verified carriers through smart routes, transparent deals and a focused mobile workflow." />
+  <meta name="keywords" content="CargoGo, cargo delivery, freight marketplace, carrier, shipper, Ukraine logistics, delivery app" />
+  <meta name="author" content="Vladyslav Kosianenko" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CargoGo — Routes. People. Deliveries." />
+  <meta property="og:description" content="A cleaner way to match cargo with verified carriers." />
+  <meta property="og:image" content="/assets/og-cargogo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CargoGo — Routes. People. Deliveries." />
+  <meta name="twitter:description" content="A cleaner way to match cargo with verified carriers." />
+  <meta name="twitter:image" content="/assets/og-cargogo.png" />
+  <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <title>CargoGo — Routes. People. Deliveries.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CargoGo","applicationCategory":"BusinessApplication","operatingSystem":"Android, iOS","description":"Cargo marketplace connecting shippers with verified carriers.","author":{"@type":"Person","name":"Vladyslav Kosianenko"}}
+  </script>
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><i></i></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="CargoGo home">
+      <img src="assets/brand-icon.png" alt="" />
+      <span>Cargo<span>Go</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#product" data-i18n="nav.product">Product</a>
+      <a href="#experience" data-i18n="nav.experience">Experience</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#download" data-i18n="nav.download">Download</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" aria-label="Language">
+        <button data-lang="en" class="active">EN</button><span>/</span><button data-lang="uk">UA</button><span>/</span><button data-lang="ru">RU</button>
+      </div>
+      <button class="theme-toggle magnetic" id="themeToggle" aria-label="Switch color theme" title="Switch theme">
+        <span class="theme-icon theme-icon-moon" aria-hidden="true">◐</span>
+        <span class="theme-icon theme-icon-sun" aria-hidden="true">☼</span>
+      </button>
+      <button class="menu-button magnetic" id="drawerOpen" aria-label="Open support and legal menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-meta reveal"><span data-i18n="hero.meta">SMART ROUTES · VERIFIED DEALS · SECURE WORKFLOW</span><span>01 — 2026</span></div>
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><i></i><span data-i18n="hero.eyebrow">A mobile cargo marketplace</span></p>
+          <h1><span data-i18n="hero.line1">Routes.</span><br><span data-i18n="hero.line2">People.</span><br><em data-i18n="hero.line3">Deliveries.</em></h1>
+          <p class="lead" data-i18n="hero.lead">CargoGo connects people who need to move cargo with verified drivers and carriers — through a transparent, route-first mobile workflow.</p>
+          <div class="hero-actions">
+            <a class="premium-button magnetic" href="#download"><span data-i18n="hero.cta">Get CargoGo</span><i>↘</i></a>
+            <a class="ghost-link" href="#experience"><span data-i18n="hero.preview">See the product</span><i>→</i></a>
+          </div>
+        </div>
+        <div class="hero-stage reveal delay-1">
+          <div class="stage-ring ring-a"></div><div class="stage-ring ring-b"></div>
+          <div class="real-phone-stack" aria-label="Real CargoGo application screenshots">
+            <div class="phone phone-main tilt-card"><img src="assets/app-real-home.webp" loading="eager" decoding="async" fetchpriority="high" alt="Real CargoGo home screen with active route and cargo" /></div>
+            <div class="phone phone-secondary"><img src="assets/app-real-route.webp" loading="eager" decoding="async" alt="Real CargoGo route screen with map and Route Pulse" /></div>
+          </div>
+          <div class="signal-card signal-a"><small>LIVE MATCH</small><strong>842 KM</strong><span>route-aware</span></div>
+          <div class="signal-card signal-b"><small>IDENTITY</small><strong>VERIFIED</strong><span>trust layer active</span></div>
+          <div class="route-streak" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="hero-foot reveal"><span>CARGOGO / UKRAINE</span><span data-i18n="hero.footer">Freight, made clearer.</span><span>SCROLL ↓</span></div>
+    </section>
+
+    <section class="ticker" aria-hidden="true"><div><span>SHIP</span><b>•</b><span>MATCH</span><b>•</b><span class="ticker-accent">MOVE</span><b>•</b><span>CONFIRM</span><b>•</b><span>SHIP</span><b>•</b><span>MATCH</span><b>•</b><span class="ticker-accent">MOVE</span><b>•</b><span>CONFIRM</span><b>•</b></div></section>
+
+    <section class="intro shell" id="product">
+      <div class="section-label reveal"><span>02</span><p data-i18n="product.label">PRODUCT</p></div>
+      <div class="intro-grid">
+        <h2 class="reveal" data-i18n="product.title">Not another logistics dashboard. A focused mobile flow.</h2>
+        <div class="intro-copy reveal delay-1">
+          <p data-i18n="product.p1">Create a cargo request or publish a trip. CargoGo matches both sides around route, timing and transport context, then keeps the deal inside one clear lifecycle.</p>
+          <p data-i18n="product.p2">The product is designed around trust: user and vehicle verification, structured deal states, evidence, communication and dispute review.</p>
+        </div>
+      </div>
+      <div class="principles">
+        <article class="principle reveal"><span>01</span><h3 data-i18n="product.card1.title">Route first</h3><p data-i18n="product.card1.text">Find relevant cargo around an existing trip instead of browsing noise.</p></article>
+        <article class="principle reveal"><span>02</span><h3 data-i18n="product.card2.title">Verified by design</h3><p data-i18n="product.card2.text">Identity and vehicle checks are built into the product flow.</p></article>
+        <article class="principle reveal"><span>03</span><h3 data-i18n="product.card3.title">One deal state</h3><p data-i18n="product.card3.text">Offer, pickup, transit, arrival and confirmation stay connected.</p></article>
+      </div>
+    </section>
+
+    <section class="route-playground shell" id="routePulse">
+      <div class="route-lab reveal">
+        <div class="route-lab-copy">
+          <p class="route-lab-kicker"><i></i><span data-i18n="route.kicker">LIVE ROUTE / INTERACTIVE</span></p>
+          <h2><span data-i18n="route.title1">A route that</span> <em data-i18n="route.title2">responds.</em></h2>
+          <p data-i18n="route.text">Move across the route or tap the track. CargoGo turns distance, timing and matching into one live flow.</p>
+          <div class="route-stats">
+            <div><small data-i18n="route.distance">DISTANCE</small><strong id="routeDistance">927 km</strong></div>
+            <div><small data-i18n="route.match">MATCH SIGNAL</small><strong id="routeMatch">12%</strong></div>
+            <div><small data-i18n="route.eta">ETA</small><strong id="routeEta">12h 39m</strong></div>
+          </div>
+        </div>
+        <div class="route-canvas" id="routeCanvas" data-interactive="true" tabindex="0" role="slider" aria-label="Interactive cargo route" aria-valuemin="0" aria-valuemax="100" aria-valuenow="12">
+          <div class="route-grid" aria-hidden="true"></div>
+          <div class="route-city city-a"><b>Lviv</b><span>UA</span></div>
+          <div class="route-city city-b"><b>Vinnytsia</b><span>UA</span></div>
+          <div class="route-city city-c"><b>Kherson</b><span>UA</span></div>
+          <svg class="route-svg" viewBox="0 0 900 420" preserveAspectRatio="none" aria-hidden="true">
+            <path class="route-shadow-path" d="M80 325 C240 250 300 345 430 245 S650 150 820 86"/>
+            <path class="route-base-path" d="M80 325 C240 250 300 345 430 245 S650 150 820 86"/>
+            <path class="route-live-path" id="routeLivePath" d="M80 325 C240 250 300 345 430 245 S650 150 820 86"/>
+          </svg>
+          <div class="route-node node-a"></div><div class="route-node node-b"></div><div class="route-node node-c"></div>
+          <div class="cargo-marker" id="cargoMarker" aria-hidden="true"><img src="assets/brand-icon.png" alt="" /></div>
+          <div class="route-hint" data-i18n="route.hint">DRAG / TAP TO MOVE</div>
+          <button class="route-run" id="routeRun" type="button"><span data-i18n="route.run">RUN ROUTE</span><i>→</i></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="shell">
+        <div class="experience-head reveal">
+          <div class="section-label light"><span>03</span><p data-i18n="experience.label">EXPERIENCE</p></div>
+          <h2><span data-i18n="experience.title1">Built to feel</span><br><em data-i18n="experience.title2">fast before it moves.</em></h2>
+        </div>
+        <div class="screen-showcase real-showcase">
+          <figure class="screen-card screen-one reveal"><div class="screen-number">01 / REAL BUILD</div><img src="assets/app-real-route.webp" loading="lazy" decoding="async" alt="Real CargoGo route screen with live route and Badger Run" /><figcaption><strong data-i18n="experience.s1.title">Route intelligence</strong><span data-i18n="experience.s1.text">Current route, matching and live context.</span></figcaption></figure>
+          <figure class="screen-card screen-two reveal delay-1"><div class="screen-number">02 / REAL BUILD</div><img src="assets/app-real-trip.webp" loading="lazy" decoding="async" alt="Real CargoGo trip details screen" /><figcaption><strong data-i18n="experience.s2.title">Trip control</strong><span data-i18n="experience.s2.text">Edit route and timing without losing the flow.</span></figcaption></figure>
+          <figure class="screen-card screen-three reveal"><div class="screen-number">03 / REAL BUILD</div><img src="assets/app-real-themes.webp" loading="lazy" decoding="async" alt="Real CargoGo profile theme selector" /><figcaption><strong data-i18n="experience.s3.title">Three visual modes</strong><span data-i18n="experience.s3.text">Classic, Clean and Badger themes inside the real app.</span></figcaption></figure>
+          <figure class="screen-card screen-four reveal delay-1"><div class="screen-number">04 / REAL BUILD</div><img src="assets/app-real-create.webp" loading="lazy" decoding="async" alt="Real CargoGo cargo creation form" /><figcaption><strong data-i18n="experience.s4.title">Cargo creation</strong><span data-i18n="experience.s4.text">A focused form for price, cargo details and route.</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="capabilities shell">
+      <div class="section-label reveal"><span>04</span><p data-i18n="cap.label">CAPABILITIES</p></div>
+      <div class="cap-grid">
+        <div class="cap-heading reveal"><h2><span data-i18n="cap.title">Everything essential.</span><br><em data-i18n="cap.subtitle">Nothing noisy.</em></h2></div>
+        <div class="cap-list">
+          <article class="cap-item reveal"><span>01</span><div><h3 data-i18n="cap.c1.title">Cargo & trips</h3><p data-i18n="cap.c1.text">Publish demand or planned transport and connect both sides.</p></div><i>↗</i></article>
+          <article class="cap-item reveal"><span>02</span><div><h3 data-i18n="cap.c2.title">Smart matching</h3><p data-i18n="cap.c2.text">Route-aware discovery instead of a flat classifieds feed.</p></div><i>↗</i></article>
+          <article class="cap-item reveal"><span>03</span><div><h3 data-i18n="cap.c3.title">Verification</h3><p data-i18n="cap.c3.text">Identity, driver and vehicle verification with review workflows.</p></div><i>↗</i></article>
+          <article class="cap-item reveal"><span>04</span><div><h3 data-i18n="cap.c4.title">Deals & evidence</h3><p data-i18n="cap.c4.text">A structured lifecycle with status transitions and supporting evidence.</p></div><i>↗</i></article>
+          <article class="cap-item reveal"><span>05</span><div><h3 data-i18n="cap.c5.title">Support & disputes</h3><p data-i18n="cap.c5.text">Clear escalation, evidence review and support around the deal.</p></div><i>↗</i></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about shell" id="about">
+      <div class="founder-panel reveal">
+        <div class="founder-art"><div class="monogram">VK</div><div class="founder-orbit"></div><div class="founder-note">FOUNDER<br>PRODUCT<br>ENGINEERING</div></div>
+        <div class="founder-content">
+          <div class="section-label"><span>05</span><p data-i18n="about.label">FOUNDER</p></div>
+          <h2>Vladyslav<br>Kosianenko</h2>
+          <p class="role">Founder & CEO · Product Architect · Lead Software Engineer</p>
+          <p class="founder-bio" data-i18n="about.bio">CargoGo is being built as a technology-first marketplace: simple for the user, rigorous underneath. Product, engineering, trust workflows and the initial platform architecture are developed around one goal — make cargo transportation easier to arrange and easier to understand.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="download" id="download">
+      <div class="shell download-shell">
+        <div class="download-copy reveal">
+          <div class="section-label dark"><span>06</span><p data-i18n="download.label">DOWNLOAD</p></div>
+          <h2><span data-i18n="download.title1">Move something.</span><br><em data-i18n="download.title2">Or move with it.</em></h2>
+          <p data-i18n="download.text">Choose a store build when available, or use a direct build for testing and preview.</p>
+        </div>
+        <div class="download-options reveal delay-1">
+          <a class="download-card magnetic" id="googlePlayLink" href="#" target="_blank" rel="noopener"><div class="store-mark">▶</div><div><small data-i18n="download.googleSmall">GET IT ON</small><strong>Google Play</strong></div><i>↗</i></a>
+          <a class="download-card magnetic" id="appStoreLink" href="#" target="_blank" rel="noopener"><div class="store-mark apple">●</div><div><small data-i18n="download.appleSmall">DOWNLOAD ON THE</small><strong>App Store</strong></div><i>↗</i></a>
+          <a class="download-card direct magnetic" id="apkLink" href="downloads/cargogo.apk" download><div class="store-mark">A</div><div><small data-i18n="download.direct">DIRECT BUILD</small><strong>Android APK</strong></div><i>↓</i></a>
+          <a class="download-card direct magnetic" id="ipaLink" href="downloads/cargogo.ipa" download><div class="store-mark">i</div><div><small data-i18n="download.direct">DIRECT BUILD</small><strong>iOS IPA</strong></div><i>↓</i></a>
+          <p class="download-note" data-i18n="download.note">Direct iOS installation depends on signing and Apple distribution rules. Store/TestFlight distribution is recommended for public iOS releases.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <div class="footer-brand"><a class="brand" href="#top"><img src="assets/brand-icon.png" alt="" /><span>Cargo<span>Go</span></span></a><p data-i18n="footer.tagline">Routes · People · Deliveries</p></div>
+    <div class="footer-nav"><button data-open-drawer="support" data-i18n="footer.support">Support</button><button data-open-drawer="legal" data-i18n="footer.legal">Legal</button><a href="#download" data-i18n="footer.download">Download</a></div>
+    <div class="footer-bottom"><span>© <span id="year"></span> CargoGo</span><span>Vladyslav Kosianenko</span><span>Built for movement.</span></div>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Support and legal">
+    <div class="drawer-top"><span>CG / INFO</span><button id="drawerClose" aria-label="Close menu">×</button></div>
+    <div class="drawer-languages" aria-label="Language"><button data-lang="en">EN</button><button data-lang="uk">UA</button><button data-lang="ru">RU</button></div>
+    <div class="drawer-tabs"><button class="active" data-drawer-tab="support" data-i18n="drawer.supportTab">Support</button><button data-drawer-tab="legal" data-i18n="drawer.legalTab">Legal</button></div>
+    <div class="drawer-panel active" data-drawer-panel="support">
+      <p class="drawer-kicker">CARGOGO SUPPORT</p><h3 data-i18n="drawer.supportTitle">Need a hand?</h3><p data-i18n="drawer.supportText">For account, verification, deal or technical questions, contact CargoGo support.</p>
+      <a class="drawer-link" href="mailto:support@cargogo.app"><span>support@cargogo.app</span><i>↗</i></a>
+      <a class="drawer-link" href="mailto:hello@cargogo.app"><span>hello@cargogo.app</span><i>↗</i></a>
+      <div class="drawer-mini"><span data-i18n="drawer.response">Response target</span><strong data-i18n="drawer.responseValue">Up to 48 hours</strong></div>
+    </div>
+    <div class="drawer-panel" data-drawer-panel="legal">
+      <p class="drawer-kicker">CARGOGO LEGAL</p><h3 data-i18n="drawer.legalTitle">Clear rules, easy access.</h3><p data-i18n="drawer.legalText">Policies and platform terms remain available without opening the app.</p>
+      <a class="drawer-link" href="privacy.html"><span data-i18n="drawer.privacy">Privacy Policy</span><i>↗</i></a>
+      <a class="drawer-link" href="terms.html"><span data-i18n="drawer.terms">Terms of Use</span><i>↗</i></a>
+      <a class="drawer-link" href="cookies.html"><span data-i18n="drawer.cookies">Cookie Policy</span><i>↗</i></a>
+    </div>
+    <div class="drawer-foot"><img src="assets/brand-icon.png" alt="" /><span>CargoGo / 2026</span></div>
+  </aside>
+
+
+  <button class="cult-trigger" id="cultTrigger" type="button" aria-haspopup="dialog" aria-controls="cultCard">
+    <span class="cult-trigger-mark"><i></i></span>
+    <span><small data-i18n="cult.triggerTop">FIELD NOTE</small><strong data-i18n="cult.trigger">Cargo cult?</strong></span>
+    <b>↗</b>
+  </button>
+
+  <div class="cult-backdrop" id="cultBackdrop" aria-hidden="true"></div>
+  <section class="cult-card cult-card-v56" id="cultCard" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cultTitle">
+    <button class="cult-close" id="cultClose" type="button" aria-label="Close">×</button>
+
+    <div class="cult-hero-scene" id="cultScene" aria-hidden="true">
+      <img class="cult-hero-photo" src="assets/cargo-cult-cinematic.webp" alt="" loading="lazy" decoding="async" />
+      <div class="cult-hero-grade"></div>
+      <div class="cult-plane-light"></div>
+      <div class="cult-runway-lights">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <div class="cult-live-fire">
+        <span class="f1"></span><span class="f2"></span><span class="f3"></span>
+        <b class="spark s1"></b><b class="spark s2"></b><b class="spark s3"></b><b class="spark s4"></b>
+      </div>
+      <div class="cult-live-smoke"><i></i><i></i><i></i></div>
+      <div class="cult-hero-caption"><span data-i18n="cult.scene">Pacific night / field reconstruction</span><b>CG / FIELD NOTE 01</b></div>
+    </div>
+
+    <div class="cult-story">
+      <div class="cult-kicker"><span></span><b data-i18n="cult.kicker">FIELD NOTE / CARGO CULT</b></div>
+      <h2 id="cultTitle"><span data-i18n="cult.title1">Why the name</span> <em data-i18n="cult.title2">CargoGo?</em></h2>
+
+      <div class="cult-story-lead">
+        <p data-i18n="cult.p1">During World War II, remote Pacific islands became part of huge military supply chains. Aircraft brought food, tools, machinery and other goods. When the bases closed and the flights stopped, that flow of cargo disappeared almost overnight.</p>
+        <p data-i18n="cult.p2">Some Melanesian movements interpreted that sudden material world through local religious and political ideas. Popular accounts describe symbolic airstrips, observation towers, signal fires and aircraft-like constructions intended to recreate the visible signs that had accompanied the arrival of cargo.</p>
+      </div>
+
+      <p class="cult-history" data-i18n="cult.p3">The best-known version of the story says that people built straw or wooden model aircraft, cleared landing grounds and lit fires in the hope that the planes — and the goods they carried — would return. That image is a simplified shorthand for much more varied and complex histories, but it is where the modern phrase “cargo cult” became widely recognizable.</p>
+
+      <div class="cult-detail-grid">
+        <article class="cult-detail-card">
+          <div class="cult-detail-media"><img src="assets/cult-straw-plane.webp" alt="" loading="lazy" decoding="async"><i></i></div>
+          <span>01</span><strong data-i18n="cult.card1">Model aircraft</strong><p data-i18n="cult.card1Text">Symbolic planes made from local materials echoed the machines people had watched arrive from overseas.</p>
+        </article>
+        <article class="cult-detail-card">
+          <div class="cult-detail-media"><img src="assets/cult-runway.webp" alt="" loading="lazy" decoding="async"><i></i></div>
+          <span>02</span><strong data-i18n="cult.card2">Landing grounds</strong><p data-i18n="cult.card2Text">Cleared strips and lines of lights recreated the visual language of wartime airfields.</p>
+        </article>
+        <article class="cult-detail-card">
+          <div class="cult-detail-media"><img src="assets/cult-tower.webp" alt="" loading="lazy" decoding="async"><i></i></div>
+          <span>03</span><strong data-i18n="cult.card3">Towers & signals</strong><p data-i18n="cult.card3Text">Wooden towers, torches and signals imitated parts of the infrastructure associated with arriving aircraft.</p>
+        </article>
+      </div>
+
+      <div class="cult-brand-link">
+        <img src="assets/brand-icon.png" alt="" />
+        <div><small data-i18n="cult.brandKicker">THE NAME, NOT THE RITUAL</small><p data-i18n="cult.brand">CargoGo takes the memorable idea in a simpler direction: cargo should move because the route and the deal work.</p></div>
+      </div>
+
+      <div class="cult-story-footer">
+        <div class="cult-sign"><strong>Cargo<span>Go</span></strong><small data-i18n="cult.tagline">Cargo, moving.</small></div>
+        <button id="cultDismiss" class="cult-dismiss" type="button"><span data-i18n="cult.close">Close</span><i>↗</i></button>
+      </div>
+      <p class="cult-footnote" data-i18n="cult.note">“Cargo cult” is a real anthropological term. The model-aircraft and runway story is a popular summary of more diverse Melanesian movements and should not be read as a complete description of them.</p>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
