@@ -26,3 +26,9 @@ Static production-oriented landing page for Vercel.
 
 ## Theme system
 CargoGo now starts in the dark theme by default. The header theme control switches to the light theme and stores the choice in `localStorage` under `cargogo-theme`.
+
+
+## v4 dark refinement
+- Dark ticker is graphite rather than white, with muted type and a restrained MOVE highlight.
+- Founder section is fully dark with two levels of graphite and an orange monogram.
+- Light theme retains the brighter editorial treatment.
