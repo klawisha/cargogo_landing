@@ -23,3 +23,7 @@ Update `CONFIG` at the top of `app.js`. Direct APK/IPA placeholders live in `dow
 
 ## v5.4 — Cargo Cult field note
 A restrained floating field-note easter egg was added to the landing page. It opens on demand (never as an automatic modal), supports EN/UA/RU, uses a lightweight inline SVG scene with subtle fire/smoke/aircraft motion, respects reduced-motion preferences, and collapses into a mobile bottom sheet.
+
+
+## v5.7
+Cargo cult story refinement: removed synthetic animated flame/smoke overlay; the real fire remains in the cinematic artwork with only subtle ember and ambient glow layers. Simplified the Close action and removed the arrow. Mobile hero crop was rebalanced so the actual campfire remains visible.

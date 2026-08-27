@@ -609,3 +609,71 @@ html[data-theme="light"] .cult-card.cult-card-v56{background:#101419;border-colo
 @media(prefers-reduced-motion:reduce){
   .cult-plane-light,.cult-runway-lights i,.cult-live-fire:before,.cult-live-fire span,.cult-live-fire .spark,.cult-live-smoke i{animation:none!important}.cult-hero-photo,.cult-detail-card,.cult-detail-media img,.cult-dismiss{transition:none!important}
 }
+
+
+/* v5.7 — cargo cult scene refinement: real photo fire + ambient embers only */
+.cult-fire-ambience{
+  position:absolute;z-index:5;left:59.2%;top:83.2%;width:150px;height:125px;
+  transform:translate(-50%,-50%);pointer-events:none;overflow:visible;
+}
+.cult-fire-glow-soft{
+  position:absolute;left:50%;top:63%;width:150px;height:92px;transform:translate(-50%,-50%);
+  border-radius:50%;background:radial-gradient(ellipse at center,rgba(255,131,48,.22) 0%,rgba(255,92,19,.10) 34%,rgba(255,88,12,.025) 57%,transparent 74%);
+  filter:blur(14px);mix-blend-mode:screen;opacity:.72;animation:cult57Glow 2.8s ease-in-out infinite alternate;
+}
+.cult-ember{
+  position:absolute;left:50%;top:69%;width:2px;height:2px;border-radius:50%;background:#ffb35e;
+  box-shadow:0 0 5px rgba(255,116,32,.9),0 0 11px rgba(255,83,14,.28);opacity:0;
+  animation:cult57Ember 3.6s linear infinite;will-change:transform,opacity;
+}
+.cult-ember.e1{margin-left:-23px;animation-delay:.15s;--dx:-13px;--rise:-72px;--s:.9}
+.cult-ember.e2{margin-left:-9px;animation-delay:.75s;--dx:10px;--rise:-88px;--s:.65}
+.cult-ember.e3{margin-left:4px;animation-delay:1.25s;--dx:18px;--rise:-68px;--s:1}
+.cult-ember.e4{margin-left:18px;animation-delay:1.9s;--dx:-7px;--rise:-94px;--s:.7}
+.cult-ember.e5{margin-left:-16px;animation-delay:2.35s;--dx:22px;--rise:-63px;--s:.55}
+.cult-ember.e6{margin-left:11px;animation-delay:2.8s;--dx:-18px;--rise:-79px;--s:.85}
+.cult-ember.e7{margin-left:-3px;animation-delay:3.1s;--dx:5px;--rise:-102px;--s:.5}
+.cult-ember.e8{margin-left:25px;animation-delay:3.35s;--dx:15px;--rise:-56px;--s:.6}
+@keyframes cult57Glow{from{opacity:.58;transform:translate(-50%,-50%) scale(.97)}to{opacity:.8;transform:translate(-50%,-50%) scale(1.04)}}
+@keyframes cult57Ember{
+  0%{opacity:0;transform:translate(0,0) scale(var(--s,.8))}
+  12%{opacity:.88}
+  58%{opacity:.54}
+  100%{opacity:0;transform:translate(var(--dx,10px),var(--rise,-76px)) scale(.22)}
+}
+
+/* Close actions: quiet, minimal, no decorative arrow */
+.cult-dismiss{
+  min-width:132px;padding:12px 19px;border-radius:999px;justify-content:center;gap:0;
+  border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.025);color:#d9dde0;
+  font-size:11px;letter-spacing:.01em;box-shadow:none;
+}
+.cult-dismiss:hover{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.2);transform:none;color:#fff}
+.cult-dismiss i{display:none!important}
+.cult-card-v56 .cult-close{
+  width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.13);
+  background:rgba(7,10,13,.58);font-size:23px;font-weight:300;color:rgba(245,243,238,.9);
+  display:grid;place-items:center;line-height:1;padding:0;box-shadow:0 8px 28px rgba(0,0,0,.18);
+}
+.cult-card-v56 .cult-close:hover{background:rgba(15,19,23,.86);border-color:rgba(255,255,255,.22);transform:none}
+
+@media(max-width:680px){
+  .cult-hero-scene{aspect-ratio:1.22}
+  .cult-hero-photo{object-position:center 60%}
+  .cult-fire-ambience{left:59.4%;top:84.5%;transform:translate(-50%,-50%) scale(.72)}
+  .cult-dismiss{min-width:104px;padding:11px 17px}
+  .cult-card-v56 .cult-close{width:40px;height:40px;font-size:22px;border-radius:50%}
+}
+@media(max-width:420px){
+  .cult-hero-scene{aspect-ratio:1.16}
+  .cult-hero-photo{object-position:center 62%}
+  .cult-fire-ambience{left:59.5%;top:85%;transform:translate(-50%,-50%) scale(.66)}
+}
+@media(pointer:coarse){
+  .cult-fire-glow-soft{filter:blur(11px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .cult-fire-glow-soft,.cult-ember{animation:none!important}
+  .cult-fire-glow-soft{opacity:.62}
+  .cult-ember{display:none}
+}
