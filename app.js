@@ -106,11 +106,11 @@ if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:
   }
   canvas.addEventListener('pointerdown',e=>{playing=false;canvas.setPointerCapture?.(e.pointerId);fromPointer(e)});
   canvas.addEventListener('pointermove',e=>{if(e.buttons||e.pointerType==='touch')fromPointer(e)});
-  canvas.addEventListener('mousemove',e=>{if(matchMedia('(pointer:fine)').matches&&!playing)fromPointer(e)});
+  canvas.addEventListener('mousemove',e=>{if(matchMedia('(pointer:fine)').matches&&!playing&&e.shiftKey)fromPointer(e)});
   canvas.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowUp'){e.preventDefault();render(progress+.04)}else if(e.key==='ArrowLeft'||e.key==='ArrowDown'){e.preventDefault();render(progress-.04)}else if(e.key==='Home'){render(0)}else if(e.key==='End'){render(1)}});
   function play(){
-    cancelAnimationFrame(raf);playing=true;const start=performance.now();const from=progress>.95?0:progress;const duration=2200;
-    function tick(now){const t=Math.min(1,(now-start)/duration);const eased=1-Math.pow(1-t,3);render(from+(1-from)*eased);if(t<1&&playing)raf=requestAnimationFrame(tick);else playing=false}
+    cancelAnimationFrame(raf);playing=true;const start=performance.now();const from=progress>.95?0:progress;const duration=2400; run&&run.classList.add('is-playing');
+    function tick(now){const t=Math.min(1,(now-start)/duration);const eased=1-Math.pow(1-t,3);render(from+(1-from)*eased);if(t<1&&playing)raf=requestAnimationFrame(tick);else {playing=false; run&&run.classList.remove('is-playing');}}
     raf=requestAnimationFrame(tick);
   }
   run?.addEventListener('click',e=>{e.stopPropagation();play()});

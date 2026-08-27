@@ -327,3 +327,8 @@ html[data-theme="light"] .route-stats{border-color:rgba(11,16,22,.12)}
 html[data-theme="dark"] .drawer-languages button{border-color:rgba(255,255,255,.1);color:#8c949b}
 html[data-theme="dark"] .drawer-languages button.active{color:#0a0e13}
 @media(max-width:700px){.drawer-languages{display:flex}}
+
+#routeCanvas{cursor:grab;touch-action:none;}
+#routeCanvas:active{cursor:grabbing;}
+#routeRun{position:relative;z-index:20;cursor:pointer;}
+#routeRun.is-playing{pointer-events:none;opacity:.75;}
