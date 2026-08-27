@@ -64,7 +64,24 @@ function openDrawer(tab='support'){selectDrawerTab(tab);drawer.classList.add('op
 function closeDrawer(){drawer.classList.remove('open');backdrop.classList.remove('open');drawer.setAttribute('aria-hidden','true');document.body.style.overflow='';}
 q('#drawerOpen').addEventListener('click',()=>openDrawer('support'));q('#drawerClose').addEventListener('click',closeDrawer);backdrop.addEventListener('click',closeDrawer);qa('[data-open-drawer]').forEach(b=>b.addEventListener('click',()=>openDrawer(b.dataset.openDrawer)));qa('[data-drawer-tab]').forEach(b=>b.addEventListener('click',()=>selectDrawerTab(b.dataset.drawerTab)));window.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
 
-window.addEventListener('scroll',()=>{const d=document.documentElement;const max=d.scrollHeight-d.clientHeight;q('.scroll-progress i').style.width=`${max?d.scrollTop/max*100:0}%`;},{passive:true});
+// Scroll progress is compositor-friendly and rAF-throttled (important on mobile browsers).
+const progressBar=q('.scroll-progress i');
+let scrollProgressFrame=0;
+function updateScrollProgress(){
+  scrollProgressFrame=0;
+  const d=document.documentElement;
+  const max=d.scrollHeight-d.clientHeight;
+  const ratio=max?d.scrollTop/max:0;
+  if(progressBar) progressBar.style.transform=`scaleX(${ratio})`;
+}
+if(progressBar){
+  progressBar.style.width='100%';
+  progressBar.style.transformOrigin='0 50%';
+  progressBar.style.transform='scaleX(0)';
+  window.addEventListener('scroll',()=>{
+    if(!scrollProgressFrame) scrollProgressFrame=requestAnimationFrame(updateScrollProgress);
+  },{passive:true});
+}
 
 if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
   const glow=q('.cursor-glow');window.addEventListener('mousemove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px';glow.style.opacity='1';});

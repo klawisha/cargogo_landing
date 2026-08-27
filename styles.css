@@ -382,3 +382,105 @@ html[data-theme="dark"] .drawer-languages button.active{color:#0a0e13}
 @media(max-width:700px){
   .route-run{right:12px;bottom:10px}
 }
+
+/* ===== v5.3 mobile layout + performance pass ===== */
+@media (max-width: 700px), (pointer: coarse) {
+  /* Fixed translucent/noise layers are disproportionately expensive on mobile GPUs. */
+  .grain,
+  .cursor-glow { display:none !important; }
+
+  .signal-card,
+  .drawer-backdrop,
+  .legal-back,
+  .legal-theme-toggle { -webkit-backdrop-filter:none !important; backdrop-filter:none !important; }
+
+  /* Founder: force a true one-column mobile composition after every dark-theme override. */
+  html[data-theme="dark"] .founder-panel,
+  html[data-theme="light"] .founder-panel,
+  .founder-panel {
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    grid-template-rows:auto auto !important;
+    min-height:0 !important;
+    overflow:hidden;
+  }
+  html[data-theme="dark"] .founder-art,
+  html[data-theme="light"] .founder-art,
+  .founder-art {
+    min-height:210px !important;
+    height:210px !important;
+    width:100% !important;
+    border-right:0 !important;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .founder-art .monogram {
+    font-size:132px !important;
+    transform:rotate(-7deg) translateY(3px) !important;
+  }
+  .founder-orbit {
+    width:250px !important;
+    height:250px !important;
+    box-shadow:0 0 0 42px rgba(255,255,255,.012),0 0 0 84px rgba(255,255,255,.006) !important;
+  }
+  .founder-note { display:none !important; }
+  .founder-content {
+    width:100% !important;
+    min-width:0 !important;
+    padding:34px 24px 42px !important;
+  }
+  .founder-content h2 {
+    max-width:100%;
+    margin:34px 0 18px !important;
+    font-size:clamp(48px,14vw,64px) !important;
+    line-height:.92 !important;
+    overflow-wrap:anywhere;
+  }
+  .role {
+    max-width:100%;
+    font-size:12px !important;
+    line-height:1.55;
+    margin-bottom:30px !important;
+  }
+  .founder-bio {
+    max-width:100% !important;
+    font-size:15px !important;
+    line-height:1.68 !important;
+  }
+
+  /* Reduce compositor pressure while preserving the design language. */
+  html[data-theme="dark"] .real-phone-stack::before { display:none !important; }
+  .real-phone-stack .phone,
+  .real-showcase .screen-card img,
+  .founder-panel,
+  .route-lab { box-shadow:none !important; }
+  .real-phone-stack .phone-secondary { filter:none !important; }
+  .route-shadow-path { display:none; }
+  .route-live-path { filter:none !important; transition:none !important; }
+  .route-canvas::after { box-shadow:inset 0 0 35px rgba(0,0,0,.14) !important; }
+  .cargo-marker { box-shadow:0 8px 20px rgba(0,0,0,.28),0 0 0 4px rgba(255,113,28,.055) !important; transition:none !important; }
+  .route-lab::before { opacity:.45; }
+
+  /* Keep long below-the-fold sections out of paint/layout work until needed. */
+  .intro,
+  .route-playground,
+  .experience,
+  .capabilities,
+  .about,
+  .download,
+  .site-footer {
+    content-visibility:auto;
+    contain-intrinsic-size:1px 900px;
+  }
+
+  /* The mobile ticker remains animated, but at a calmer cadence. */
+  .ticker>div { animation-duration:42s !important; will-change:transform; }
+  .reveal { transition-duration:.55s !important; }
+}
+
+@media (max-width: 430px) {
+  .founder-art { height:185px !important; min-height:185px !important; }
+  .founder-art .monogram { font-size:112px !important; }
+  .founder-content { padding:30px 20px 38px !important; }
+  .founder-content h2 { font-size:clamp(44px,13.5vw,56px) !important; }
+}
