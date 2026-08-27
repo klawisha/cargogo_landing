@@ -23,3 +23,6 @@ Static production-oriented landing page for Vercel.
 - Responsive layout
 - Reduced-motion support
 - Vercel caching and security headers
+
+## Theme system
+CargoGo now starts in the dark theme by default. The header theme control switches to the light theme and stores the choice in `localStorage` under `cargogo-theme`.

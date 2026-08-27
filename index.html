@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#080d13" />
+  <meta name="theme-color" content="#080d13" id="themeColor" />
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem("cargogo-theme")||"dark"}catch(e){}</script>
   <meta name="description" content="CargoGo connects cargo owners and verified carriers through smart routes, transparent deals and a focused mobile workflow." />
   <meta name="keywords" content="CargoGo, cargo delivery, freight marketplace, carrier, shipper, Ukraine logistics, delivery app" />
   <meta name="author" content="Vladyslav Kosianenko" />
@@ -51,6 +52,10 @@
       <div class="lang-switch" aria-label="Language">
         <button data-lang="en" class="active">EN</button><span>/</span><button data-lang="uk">UA</button><span>/</span><button data-lang="ru">RU</button>
       </div>
+      <button class="theme-toggle magnetic" id="themeToggle" aria-label="Switch color theme" title="Switch theme">
+        <span class="theme-icon theme-icon-moon" aria-hidden="true">◐</span>
+        <span class="theme-icon theme-icon-sun" aria-hidden="true">☼</span>
+      </button>
       <button class="menu-button magnetic" id="drawerOpen" aria-label="Open support and legal menu"><span></span><span></span></button>
     </div>
   </header>

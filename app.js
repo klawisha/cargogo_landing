@@ -68,3 +68,19 @@ if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:
   qa('.magnetic').forEach(el=>{el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();const x=(e.clientX-r.left-r.width/2)*.12,y=(e.clientY-r.top-r.height/2)*.12;el.style.transform=`translate(${x}px,${y}px)`;});el.addEventListener('mouseleave',()=>el.style.transform='');});
   const card=q('.tilt-card');if(card){card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const rx=((e.clientY-r.top)/r.height-.5)*-5,ry=((e.clientX-r.left)/r.width-.5)*7;card.style.transform=`rotate(3deg) perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;});card.addEventListener('mouseleave',()=>card.style.transform='rotate(3deg)');}
 }
+
+// Primary dark / optional light theme
+const themeToggle=document.getElementById('themeToggle');
+const themeMeta=document.getElementById('themeColor');
+function applyTheme(theme){
+  const next=theme==='light'?'light':'dark';
+  document.documentElement.dataset.theme=next;
+  try{localStorage.setItem('cargogo-theme',next)}catch(e){}
+  if(themeMeta) themeMeta.setAttribute('content', next==='dark'?'#080b0f':'#f2f1ed');
+  if(themeToggle){
+    themeToggle.setAttribute('aria-label',next==='dark'?'Switch to light theme':'Switch to dark theme');
+    themeToggle.setAttribute('title',next==='dark'?'Light theme':'Dark theme');
+  }
+}
+applyTheme(document.documentElement.dataset.theme||'dark');
+if(themeToggle) themeToggle.addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
