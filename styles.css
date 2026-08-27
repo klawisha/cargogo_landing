@@ -332,3 +332,53 @@ html[data-theme="dark"] .drawer-languages button.active{color:#0a0e13}
 #routeCanvas:active{cursor:grabbing;}
 #routeRun{position:relative;z-index:20;cursor:pointer;}
 #routeRun.is-playing{pointer-events:none;opacity:.75;}
+
+/* ===== v5.2 route interaction repair ===== */
+.route-lab,
+.route-canvas,
+.route-canvas * {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+.route-canvas {
+  cursor: default;
+  touch-action: pan-y;
+  overscroll-behavior: contain;
+}
+.route-canvas.is-dragging { cursor: grabbing; }
+.route-canvas::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  box-shadow:inset 0 0 80px rgba(0,0,0,.18);
+}
+.route-svg,
+.route-grid,
+.route-node,
+.route-city,
+.cargo-marker,
+.route-hint { pointer-events:none; }
+.route-run {
+  position:absolute !important;
+  z-index:30 !important;
+  right:18px;
+  bottom:16px;
+  left:auto;
+  top:auto;
+  transform:none !important;
+  touch-action:manipulation;
+  user-select:none;
+  -webkit-user-select:none;
+}
+.route-run:active { transform:scale(.975) !important; }
+.route-run.is-playing { pointer-events:auto; opacity:.72; cursor:wait; }
+@media (pointer:fine) {
+  .route-canvas[data-interactive="true"] { cursor:grab; }
+  .route-canvas[data-interactive="true"].is-dragging { cursor:grabbing; }
+}
+@media(max-width:700px){
+  .route-run{right:12px;bottom:10px}
+}

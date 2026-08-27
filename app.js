@@ -73,7 +73,7 @@ if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:
 }
 
 
-// Interactive Route Pulse — pointer, touch, keyboard and replay animation.
+// Interactive Route Pulse — deliberate drag/tap control and replay animation.
 (() => {
   const canvas=document.getElementById('routeCanvas');
   const path=document.getElementById('routeLivePath');
@@ -83,38 +83,124 @@ if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:
   const match=document.getElementById('routeMatch');
   const eta=document.getElementById('routeEta');
   if(!canvas||!path||!marker) return;
+
   const total=path.getTotalLength();
   path.style.strokeDasharray=`${total} ${total}`;
-  let progress=.12, raf=0, playing=false;
   const clamp=n=>Math.max(0,Math.min(1,n));
-  function render(p){
+  let progress=.12;
+  let target=.12;
+  let frame=0;
+  let playFrame=0;
+  let playing=false;
+  let dragging=false;
+  let activePointer=null;
+  let downX=0, downY=0, moved=false;
+
+  function paint(p){
     progress=clamp(p);
     const pt=path.getPointAtLength(total*progress);
     const vb=path.ownerSVGElement.viewBox.baseVal;
     marker.style.left=`${pt.x/vb.width*100}%`;
     marker.style.top=`${pt.y/vb.height*100}%`;
     path.style.strokeDashoffset=String(total*(1-progress));
-    canvas.style.setProperty('--route-progress',progress);
     canvas.setAttribute('aria-valuenow',Math.round(progress*100));
     if(distance) distance.textContent=`${Math.round(927*progress)} km`;
     if(match) match.textContent=`${Math.round(8+progress*84)}%`;
-    if(eta){const mins=Math.round(759*progress);eta.textContent=`${Math.floor(mins/60)}h ${String(mins%60).padStart(2,'0')}m`;}
+    if(eta){
+      const mins=Math.round(759*progress);
+      eta.textContent=`${Math.floor(mins/60)}h ${String(mins%60).padStart(2,'0')}m`;
+    }
   }
-  function fromPointer(e){
+
+  function settle(){
+    cancelAnimationFrame(frame);
+    const tick=()=>{
+      const delta=target-progress;
+      if(Math.abs(delta)<.0007){ paint(target); frame=0; return; }
+      paint(progress+delta*.16);
+      frame=requestAnimationFrame(tick);
+    };
+    frame=requestAnimationFrame(tick);
+  }
+
+  function targetFromPointer(e){
     const r=canvas.getBoundingClientRect();
-    render((e.clientX-r.left)/r.width);
+    target=clamp((e.clientX-r.left)/r.width);
+    settle();
   }
-  canvas.addEventListener('pointerdown',e=>{playing=false;canvas.setPointerCapture?.(e.pointerId);fromPointer(e)});
-  canvas.addEventListener('pointermove',e=>{if(e.buttons||e.pointerType==='touch')fromPointer(e)});
-  canvas.addEventListener('mousemove',e=>{if(matchMedia('(pointer:fine)').matches&&!playing&&e.shiftKey)fromPointer(e)});
-  canvas.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowUp'){e.preventDefault();render(progress+.04)}else if(e.key==='ArrowLeft'||e.key==='ArrowDown'){e.preventDefault();render(progress-.04)}else if(e.key==='Home'){render(0)}else if(e.key==='End'){render(1)}});
+
+  function stopPlayback(){
+    playing=false;
+    cancelAnimationFrame(playFrame);
+    run?.classList.remove('is-playing');
+  }
+
+  canvas.addEventListener('pointerdown',e=>{
+    if(e.target.closest?.('#routeRun')) return;
+    stopPlayback();
+    dragging=true;
+    moved=false;
+    activePointer=e.pointerId;
+    downX=e.clientX; downY=e.clientY;
+    canvas.classList.add('is-dragging');
+    canvas.setPointerCapture?.(e.pointerId);
+    e.preventDefault();
+  });
+
+  canvas.addEventListener('pointermove',e=>{
+    if(!dragging || e.pointerId!==activePointer) return;
+    if(Math.hypot(e.clientX-downX,e.clientY-downY)>4) moved=true;
+    targetFromPointer(e);
+    e.preventDefault();
+  });
+
+  const release=e=>{
+    if(!dragging || (activePointer!==null && e.pointerId!==activePointer)) return;
+    if(!moved) targetFromPointer(e); // a deliberate tap/click jumps smoothly
+    dragging=false;
+    activePointer=null;
+    canvas.classList.remove('is-dragging');
+    try{canvas.releasePointerCapture?.(e.pointerId)}catch(_){}
+  };
+  canvas.addEventListener('pointerup',release);
+  canvas.addEventListener('pointercancel',release);
+
+  canvas.addEventListener('keydown',e=>{
+    let next=null;
+    if(e.key==='ArrowRight'||e.key==='ArrowUp') next=target+.04;
+    else if(e.key==='ArrowLeft'||e.key==='ArrowDown') next=target-.04;
+    else if(e.key==='Home') next=0;
+    else if(e.key==='End') next=1;
+    if(next!==null){e.preventDefault();stopPlayback();target=clamp(next);settle();}
+  });
+
   function play(){
-    cancelAnimationFrame(raf);playing=true;const start=performance.now();const from=progress>.95?0:progress;const duration=2400; run&&run.classList.add('is-playing');
-    function tick(now){const t=Math.min(1,(now-start)/duration);const eased=1-Math.pow(1-t,3);render(from+(1-from)*eased);if(t<1&&playing)raf=requestAnimationFrame(tick);else {playing=false; run&&run.classList.remove('is-playing');}}
-    raf=requestAnimationFrame(tick);
+    if(playing) return;
+    cancelAnimationFrame(frame);
+    playing=true;
+    run?.classList.add('is-playing');
+    const from=progress>.965?0:progress;
+    if(from===0){progress=0;target=0;paint(0)}
+    const start=performance.now();
+    const duration=2700;
+    const tick=now=>{
+      if(!playing) return;
+      const t=Math.min(1,(now-start)/duration);
+      const eased=t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+      target=from+(1-from)*eased;
+      paint(target);
+      if(t<1) playFrame=requestAnimationFrame(tick);
+      else {playing=false;run?.classList.remove('is-playing');}
+    };
+    playFrame=requestAnimationFrame(tick);
   }
-  run?.addEventListener('click',e=>{e.stopPropagation();play()});
-  render(progress);
+
+  if(run){
+    ['pointerdown','pointermove','pointerup'].forEach(type=>run.addEventListener(type,e=>e.stopPropagation()));
+    run.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();play();});
+  }
+
+  paint(progress);
 })();
 
 // Primary dark / optional light theme

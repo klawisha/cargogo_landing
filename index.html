@@ -117,7 +117,7 @@
             <div><small data-i18n="route.eta">ETA</small><strong id="routeEta">12h 39m</strong></div>
           </div>
         </div>
-        <div class="route-canvas" id="routeCanvas" tabindex="0" role="slider" aria-label="Interactive cargo route" aria-valuemin="0" aria-valuemax="100" aria-valuenow="12">
+        <div class="route-canvas" id="routeCanvas" data-interactive="true" tabindex="0" role="slider" aria-label="Interactive cargo route" aria-valuemin="0" aria-valuemax="100" aria-valuenow="12">
           <div class="route-grid" aria-hidden="true"></div>
           <div class="route-city city-a"><b>Lviv</b><span>UA</span></div>
           <div class="route-city city-b"><b>Vinnytsia</b><span>UA</span></div>
@@ -130,7 +130,7 @@
           <div class="route-node node-a"></div><div class="route-node node-b"></div><div class="route-node node-c"></div>
           <div class="cargo-marker" id="cargoMarker" aria-hidden="true"><img src="assets/brand-icon.png" alt="" /></div>
           <div class="route-hint" data-i18n="route.hint">DRAG / TAP TO MOVE</div>
-          <button class="route-run magnetic" id="routeRun" type="button"><span data-i18n="route.run">RUN ROUTE</span><i>→</i></button>
+          <button class="route-run" id="routeRun" type="button"><span data-i18n="route.run">RUN ROUTE</span><i>→</i></button>
         </div>
       </div>
     </section>

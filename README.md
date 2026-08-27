@@ -1,3 +1,5 @@
+CargoGo Landing v5.2 — Route Interaction Repair
+
 # CargoGo Landing v5 — Real Product Edition
 
 Static production-ready landing page for Vercel.
