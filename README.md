@@ -1,34 +1,20 @@
-# CargoGo Landing v2
+# CargoGo Landing v5 — Real Product Edition
 
-Static production-oriented landing page for Vercel.
+Static production-ready landing page for Vercel.
+
+## v5 changes
+- Dark theme remains the default; Light theme is optional and persisted.
+- Marketing mockups replaced with real CargoGo Android screenshots from the current app build.
+- Hero uses real CargoGo home + live route screens.
+- Product showcase uses real route, trip detail, theme selector and cargo creation screens.
+- Added an interactive Route Pulse section: pointer/touch/keyboard route progress, live marker, metrics and replay animation.
+- Founder `Contact / Support` CTA removed.
+- Mobile drawer now exposes EN / UA / RU, since the compact header hides the desktop language switch.
+- Responsive layouts tuned for narrow Android/iPhone widths, tablets and desktop; the real screenshot showcase becomes a swipeable snap carousel on phones.
+- Respects `prefers-reduced-motion` and keeps touch interactions independent of hover-only effects.
 
 ## Deploy to Vercel
-1. Create a new Vercel project and upload/import this folder.
-2. Framework preset: **Other**.
-3. Build command: leave empty.
-4. Output directory: leave empty / project root.
-5. Deploy.
+Framework preset: **Other**. No build command is required. Deploy the contents of this folder as the project root.
 
-## Before public release
-- Put direct builds into `downloads/cargogo.apk` and `downloads/cargogo.ipa`.
-- Set Google Play and App Store URLs in `app.js` → `CONFIG`.
-- After Vercel assigns the final production URL, add an absolute canonical URL and `og:url` to `index.html` if desired.
-- Replace legal placeholder text with the approved production policies before public launch.
-
-## Included
-- EN / UA / RU runtime localization
-- CargoGo branded assets and product screens
-- OpenGraph image, favicon, Apple touch icon, PWA manifest
-- Support / Legal drawer
-- Responsive layout
-- Reduced-motion support
-- Vercel caching and security headers
-
-## Theme system
-CargoGo now starts in the dark theme by default. The header theme control switches to the light theme and stores the choice in `localStorage` under `cargogo-theme`.
-
-
-## v4 dark refinement
-- Dark ticker is graphite rather than white, with muted type and a restrained MOVE highlight.
-- Founder section is fully dark with two levels of graphite and an orange monogram.
-- Light theme retains the brighter editorial treatment.
+## Store/direct links
+Update `CONFIG` at the top of `app.js`. Direct APK/IPA placeholders live in `downloads/`.

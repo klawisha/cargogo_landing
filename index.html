@@ -75,7 +75,10 @@
         </div>
         <div class="hero-stage reveal delay-1">
           <div class="stage-ring ring-a"></div><div class="stage-ring ring-b"></div>
-          <div class="phone phone-main tilt-card"><img src="assets/app-screen-1.png" alt="CargoGo route screen" /></div>
+          <div class="real-phone-stack" aria-label="Real CargoGo application screenshots">
+            <div class="phone phone-main tilt-card"><img src="assets/app-real-home.webp" alt="Real CargoGo home screen with active route and cargo" /></div>
+            <div class="phone phone-secondary"><img src="assets/app-real-route.webp" alt="Real CargoGo route screen with map and Route Pulse" /></div>
+          </div>
           <div class="signal-card signal-a"><small>LIVE MATCH</small><strong>842 KM</strong><span>route-aware</span></div>
           <div class="signal-card signal-b"><small>IDENTITY</small><strong>VERIFIED</strong><span>trust layer active</span></div>
           <div class="route-streak" aria-hidden="true"></div>
@@ -102,16 +105,47 @@
       </div>
     </section>
 
+    <section class="route-playground shell" id="routePulse">
+      <div class="route-lab reveal">
+        <div class="route-lab-copy">
+          <p class="route-lab-kicker"><i></i><span data-i18n="route.kicker">LIVE ROUTE / INTERACTIVE</span></p>
+          <h2><span data-i18n="route.title1">A route that</span> <em data-i18n="route.title2">responds.</em></h2>
+          <p data-i18n="route.text">Move across the route or tap the track. CargoGo turns distance, timing and matching into one live flow.</p>
+          <div class="route-stats">
+            <div><small data-i18n="route.distance">DISTANCE</small><strong id="routeDistance">927 km</strong></div>
+            <div><small data-i18n="route.match">MATCH SIGNAL</small><strong id="routeMatch">12%</strong></div>
+            <div><small data-i18n="route.eta">ETA</small><strong id="routeEta">12h 39m</strong></div>
+          </div>
+        </div>
+        <div class="route-canvas" id="routeCanvas" tabindex="0" role="slider" aria-label="Interactive cargo route" aria-valuemin="0" aria-valuemax="100" aria-valuenow="12">
+          <div class="route-grid" aria-hidden="true"></div>
+          <div class="route-city city-a"><b>Lviv</b><span>UA</span></div>
+          <div class="route-city city-b"><b>Vinnytsia</b><span>UA</span></div>
+          <div class="route-city city-c"><b>Kherson</b><span>UA</span></div>
+          <svg class="route-svg" viewBox="0 0 900 420" preserveAspectRatio="none" aria-hidden="true">
+            <path class="route-shadow-path" d="M80 325 C240 250 300 345 430 245 S650 150 820 86"/>
+            <path class="route-base-path" d="M80 325 C240 250 300 345 430 245 S650 150 820 86"/>
+            <path class="route-live-path" id="routeLivePath" d="M80 325 C240 250 300 345 430 245 S650 150 820 86"/>
+          </svg>
+          <div class="route-node node-a"></div><div class="route-node node-b"></div><div class="route-node node-c"></div>
+          <div class="cargo-marker" id="cargoMarker" aria-hidden="true"><img src="assets/brand-icon.png" alt="" /></div>
+          <div class="route-hint" data-i18n="route.hint">DRAG / TAP TO MOVE</div>
+          <button class="route-run magnetic" id="routeRun" type="button"><span data-i18n="route.run">RUN ROUTE</span><i>→</i></button>
+        </div>
+      </div>
+    </section>
+
     <section class="experience" id="experience">
       <div class="shell">
         <div class="experience-head reveal">
           <div class="section-label light"><span>03</span><p data-i18n="experience.label">EXPERIENCE</p></div>
           <h2><span data-i18n="experience.title1">Built to feel</span><br><em data-i18n="experience.title2">fast before it moves.</em></h2>
         </div>
-        <div class="screen-showcase">
-          <figure class="screen-card screen-one reveal"><div class="screen-number">01</div><img src="assets/app-screen-1.png" alt="CargoGo route and matching screen" /><figcaption><strong data-i18n="experience.s1.title">Route intelligence</strong><span data-i18n="experience.s1.text">Current route, matching and live context.</span></figcaption></figure>
-          <figure class="screen-card screen-two reveal delay-1"><div class="screen-number">02</div><img src="assets/app-screen-2.png" alt="CargoGo trip editing screen" /><figcaption><strong data-i18n="experience.s2.title">Trip control</strong><span data-i18n="experience.s2.text">Edit route and timing without losing the flow.</span></figcaption></figure>
-          <figure class="screen-card screen-three reveal delay-2"><div class="screen-number">03</div><img src="assets/app-screen-3.png" alt="CargoGo Badger Run screen" /><figcaption><strong data-i18n="experience.s3.title">Brand with character</strong><span data-i18n="experience.s3.text">A product identity that stays memorable.</span></figcaption></figure>
+        <div class="screen-showcase real-showcase">
+          <figure class="screen-card screen-one reveal"><div class="screen-number">01 / REAL BUILD</div><img src="assets/app-real-route.webp" alt="Real CargoGo route screen with live route and Badger Run" /><figcaption><strong data-i18n="experience.s1.title">Route intelligence</strong><span data-i18n="experience.s1.text">Current route, matching and live context.</span></figcaption></figure>
+          <figure class="screen-card screen-two reveal delay-1"><div class="screen-number">02 / REAL BUILD</div><img src="assets/app-real-trip.webp" alt="Real CargoGo trip details screen" /><figcaption><strong data-i18n="experience.s2.title">Trip control</strong><span data-i18n="experience.s2.text">Edit route and timing without losing the flow.</span></figcaption></figure>
+          <figure class="screen-card screen-three reveal"><div class="screen-number">03 / REAL BUILD</div><img src="assets/app-real-themes.webp" alt="Real CargoGo profile theme selector" /><figcaption><strong data-i18n="experience.s3.title">Three visual modes</strong><span data-i18n="experience.s3.text">Classic, Clean and Badger themes inside the real app.</span></figcaption></figure>
+          <figure class="screen-card screen-four reveal delay-1"><div class="screen-number">04 / REAL BUILD</div><img src="assets/app-real-create.webp" alt="Real CargoGo cargo creation form" /><figcaption><strong data-i18n="experience.s4.title">Cargo creation</strong><span data-i18n="experience.s4.text">A focused form for price, cargo details and route.</span></figcaption></figure>
         </div>
       </div>
     </section>
@@ -138,7 +172,6 @@
           <h2>Vladyslav<br>Kosianenko</h2>
           <p class="role">Founder & CEO · Product Architect · Lead Software Engineer</p>
           <p class="founder-bio" data-i18n="about.bio">CargoGo is being built as a technology-first marketplace: simple for the user, rigorous underneath. Product, engineering, trust workflows and the initial platform architecture are developed around one goal — make cargo transportation easier to arrange and easier to understand.</p>
-          <button class="inline-button magnetic" data-open-drawer="support"><span data-i18n="about.contact">Contact / Support</span><i>↗</i></button>
         </div>
       </div>
     </section>
@@ -170,6 +203,7 @@
   <div class="drawer-backdrop" id="drawerBackdrop"></div>
   <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Support and legal">
     <div class="drawer-top"><span>CG / INFO</span><button id="drawerClose" aria-label="Close menu">×</button></div>
+    <div class="drawer-languages" aria-label="Language"><button data-lang="en">EN</button><button data-lang="uk">UA</button><button data-lang="ru">RU</button></div>
     <div class="drawer-tabs"><button class="active" data-drawer-tab="support" data-i18n="drawer.supportTab">Support</button><button data-drawer-tab="legal" data-i18n="drawer.legalTab">Legal</button></div>
     <div class="drawer-panel active" data-drawer-panel="support">
       <p class="drawer-kicker">CARGOGO SUPPORT</p><h3 data-i18n="drawer.supportTitle">Need a hand?</h3><p data-i18n="drawer.supportText">For account, verification, deal or technical questions, contact CargoGo support.</p>
