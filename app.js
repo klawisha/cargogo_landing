@@ -45,28 +45,37 @@ const I18N = {
 };
 
 Object.assign(I18N.en,{
-  "cult.triggerTop":"FIELD NOTE","cult.trigger":"Cargo cult?","cult.kicker":"FIELD NOTE / 07",
-  "cult.title1":"The curious story","cult.title2":"behind “cargo cult”.",
-  "cult.p1":"“Cargo cult” is an anthropological label associated with several Melanesian movements of the 20th century. Contact with colonial systems, military bases and huge flows of unfamiliar goods sometimes became part of new ritual and political movements.",
-  "cult.p2":"The famous image of improvised runways, towers or aircraft built to make the cargo return is a popular shorthand — memorable, but much simpler than the real histories behind those movements.",
-  "cult.quote":"Symbols can imitate logistics. CargoGo is built to make the real thing work.",
-  "cult.note":"A small CargoGo field note — history, not a product claim.","cult.scene":"A stylized field-note scene"
+  "cult.triggerTop":"FIELD NOTE","cult.trigger":"Cargo cult?","cult.kicker":"FIELD NOTE / CARGO CULT",
+  "cult.title1":"Why the name","cult.title2":"CargoGo?",
+  "cult.p1":"During World War II, remote Pacific islands suddenly became part of enormous military supply chains. Aircraft arrived with food, tools, machinery and unfamiliar goods — then, after the bases closed, much of that flow disappeared just as abruptly.",
+  "cult.p2":"Some Melanesian movements mixed this new material world with local religious and political ideas. The famous story tells of symbolic airstrips, towers, fires and aircraft-like constructions meant to echo the actions associated with arriving cargo. It is a simplified image of a much richer history — but a striking one.",
+  "cult.manifesto":"We are not about rituals. We are about real cargo, real vehicles and real deals.",
+  "cult.bridge":"CargoGo is the opposite idea: logistics should work because the route, trust and transaction actually work — not because we merely imitate the signs of them.",
+  "cult.quote":"Rituals do not move cargo. We do.",
+  "cult.note":"A playful brand field note. “Cargo cult” is a real anthropological term; the runway-and-aircraft story is a popular shorthand for more complex Melanesian histories.",
+  "cult.scene":"Pacific night / field reconstruction"
 });
 Object.assign(I18N.uk,{
-  "cult.triggerTop":"ПОЛЬОВА НОТАТКА","cult.trigger":"Культ карго?","cult.kicker":"ПОЛЬОВА НОТАТКА / 07",
-  "cult.title1":"Дивна історія","cult.title2":"за словами «культ карго».",
-  "cult.p1":"«Культ карго» — антропологічна назва, пов’язана з кількома меланезійськими рухами XX століття. Контакт із колоніальними системами, військовими базами та величезними потоками незнайомих товарів інколи ставав частиною нових ритуальних і політичних рухів.",
-  "cult.p2":"Відомий образ імпровізованих злітних смуг, веж або літаків, нібито створених, щоб вантаж повернувся, — популярне спрощення: яскраве, але значно простіше за реальні історії цих рухів.",
-  "cult.quote":"Символи можуть імітувати логістику. CargoGo створюється, щоб працювала справжня.",
-  "cult.note":"Невелика польова нотатка CargoGo — історія, а не заява про продукт.","cult.scene":"Стилізована сцена польової нотатки"
+  "cult.triggerTop":"ПОЛЬОВА НОТАТКА","cult.trigger":"Культ карго?","cult.kicker":"ПОЛЬОВА НОТАТКА / КУЛЬТ КАРГО",
+  "cult.title1":"Чому назва","cult.title2":"CargoGo?",
+  "cult.p1":"Під час Другої світової війни віддалені острови Тихого океану раптово стали частиною величезних військових ланцюгів постачання. Літаки привозили їжу, інструменти, техніку й незнайомі товари — а після закриття баз значна частина цього потоку так само раптово зникла.",
+  "cult.p2":"Деякі меланезійські рухи поєднували новий матеріальний світ із місцевими релігійними та політичними уявленнями. Відомий образ розповідає про символічні смуги, вежі, вогні та конструкції, схожі на літаки, що повторювали дії, пов’язані з прибуттям вантажів. Це спрощений образ значно складнішої історії — але дуже виразний.",
+  "cult.manifesto":"Ми — не про ритуали. Ми — про реальні вантажі, реальні машини та реальні угоди.",
+  "cult.bridge":"CargoGo — протилежна ідея: логістика має працювати тому, що справді працюють маршрут, довіра й угода, а не тому, що ми лише відтворили їхні зовнішні ознаки.",
+  "cult.quote":"Ритуали не возять вантажі. Ми — возимо.",
+  "cult.note":"Невелика брендова польова нотатка. «Культ карго» — реальний антропологічний термін; історія про смуги й макети літаків є популярним скороченим образом складніших меланезійських історій.",
+  "cult.scene":"Тихоокеанська ніч / польова реконструкція"
 });
 Object.assign(I18N.ru,{
-  "cult.triggerTop":"ПОЛЕВАЯ ЗАМЕТКА","cult.trigger":"Культ карго?","cult.kicker":"ПОЛЕВАЯ ЗАМЕТКА / 07",
-  "cult.title1":"Странная история","cult.title2":"за словами «культ карго».",
-  "cult.p1":"«Культ карго» — антропологическое название, связанное с несколькими меланезийскими движениями XX века. Контакт с колониальными системами, военными базами и огромными потоками незнакомых товаров иногда становился частью новых ритуальных и политических движений.",
-  "cult.p2":"Знаменитый образ импровизированных взлётных полос, башен или самолётов, будто бы созданных, чтобы груз вернулся, — популярное упрощение: запоминающееся, но намного проще реальных историй этих движений.",
-  "cult.quote":"Символы могут имитировать логистику. CargoGo создаётся, чтобы работала настоящая.",
-  "cult.note":"Небольшая полевая заметка CargoGo — история, а не заявление о продукте.","cult.scene":"Стилизованная сцена полевой заметки"
+  "cult.triggerTop":"ПОЛЕВАЯ ЗАМЕТКА","cult.trigger":"Культ карго?","cult.kicker":"ПОЛЕВАЯ ЗАМЕТКА / КУЛЬТ КАРГО",
+  "cult.title1":"Почему мы назвали себя","cult.title2":"CargoGo?",
+  "cult.p1":"Во время Второй мировой войны отдалённые острова Тихого океана внезапно стали частью огромных военных цепочек снабжения. Самолёты привозили еду, инструменты, технику и незнакомые товары — а после закрытия баз значительная часть этого потока так же внезапно исчезла.",
+  "cult.p2":"Некоторые меланезийские движения соединяли новый материальный мир с местными религиозными и политическими представлениями. Известный образ рассказывает о символических взлётных полосах, вышках, сигнальных огнях и конструкциях, похожих на самолёты, — как о повторении действий, связанных с прибытием грузов. Это упрощённый образ гораздо более сложной истории, но очень запоминающийся.",
+  "cult.manifesto":"Мы — не про ритуалы. Мы — про реальные грузы, реальные машины и реальные сделки.",
+  "cult.bridge":"CargoGo — противоположная идея: логистика должна работать потому, что реально работают маршрут, доверие и сделка, а не потому, что мы просто повторили их внешние признаки.",
+  "cult.quote":"Ритуалы не возят грузы. Мы — возим.",
+  "cult.note":"Небольшая брендовая полевая заметка. «Культ карго» — реальный антропологический термин; история про полосы и макеты самолётов — популярный сокращённый образ более сложных меланезийских историй.",
+  "cult.scene":"Тихоокеанская ночь / полевая реконструкция"
 });
 
 const q = s => document.querySelector(s), qa = s => [...document.querySelectorAll(s)];
@@ -290,4 +299,19 @@ if(themeToggle) themeToggle.addEventListener('click',()=>applyTheme(document.doc
   const reveal=()=>trigger.classList.add('ready');
   if(document.readyState==='complete') setTimeout(reveal,1500);
   else window.addEventListener('load',()=>setTimeout(reveal,1500),{once:true});
+
+  const scene=document.getElementById('cultScene');
+  if(scene && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    scene.addEventListener('pointermove',e=>{
+      const r=scene.getBoundingClientRect();
+      const x=((e.clientX-r.left)/r.width-.5)*-7;
+      const y=((e.clientY-r.top)/r.height-.5)*-5;
+      scene.style.setProperty('--mx',`${x.toFixed(2)}px`);
+      scene.style.setProperty('--my',`${y.toFixed(2)}px`);
+    });
+    scene.addEventListener('pointerleave',()=>{
+      scene.style.setProperty('--mx','0px');
+      scene.style.setProperty('--my','0px');
+    });
+  }
 })();
