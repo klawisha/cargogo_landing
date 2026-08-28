@@ -44,6 +44,31 @@ const I18N = {
   }
 };
 
+Object.assign(I18N.en,{
+  "cult.triggerTop":"FIELD NOTE","cult.trigger":"Cargo cult?","cult.kicker":"FIELD NOTE / 07",
+  "cult.title1":"The curious story","cult.title2":"behind “cargo cult”.",
+  "cult.p1":"“Cargo cult” is an anthropological label associated with several Melanesian movements of the 20th century. Contact with colonial systems, military bases and huge flows of unfamiliar goods sometimes became part of new ritual and political movements.",
+  "cult.p2":"The famous image of improvised runways, towers or aircraft built to make the cargo return is a popular shorthand — memorable, but much simpler than the real histories behind those movements.",
+  "cult.quote":"Symbols can imitate logistics. CargoGo is built to make the real thing work.",
+  "cult.note":"A small CargoGo field note — history, not a product claim.","cult.scene":"A stylized field-note scene"
+});
+Object.assign(I18N.uk,{
+  "cult.triggerTop":"ПОЛЬОВА НОТАТКА","cult.trigger":"Культ карго?","cult.kicker":"ПОЛЬОВА НОТАТКА / 07",
+  "cult.title1":"Дивна історія","cult.title2":"за словами «культ карго».",
+  "cult.p1":"«Культ карго» — антропологічна назва, пов’язана з кількома меланезійськими рухами XX століття. Контакт із колоніальними системами, військовими базами та величезними потоками незнайомих товарів інколи ставав частиною нових ритуальних і політичних рухів.",
+  "cult.p2":"Відомий образ імпровізованих злітних смуг, веж або літаків, нібито створених, щоб вантаж повернувся, — популярне спрощення: яскраве, але значно простіше за реальні історії цих рухів.",
+  "cult.quote":"Символи можуть імітувати логістику. CargoGo створюється, щоб працювала справжня.",
+  "cult.note":"Невелика польова нотатка CargoGo — історія, а не заява про продукт.","cult.scene":"Стилізована сцена польової нотатки"
+});
+Object.assign(I18N.ru,{
+  "cult.triggerTop":"ПОЛЕВАЯ ЗАМЕТКА","cult.trigger":"Культ карго?","cult.kicker":"ПОЛЕВАЯ ЗАМЕТКА / 07",
+  "cult.title1":"Странная история","cult.title2":"за словами «культ карго».",
+  "cult.p1":"«Культ карго» — антропологическое название, связанное с несколькими меланезийскими движениями XX века. Контакт с колониальными системами, военными базами и огромными потоками незнакомых товаров иногда становился частью новых ритуальных и политических движений.",
+  "cult.p2":"Знаменитый образ импровизированных взлётных полос, башен или самолётов, будто бы созданных, чтобы груз вернулся, — популярное упрощение: запоминающееся, но намного проще реальных историй этих движений.",
+  "cult.quote":"Символы могут имитировать логистику. CargoGo создаётся, чтобы работала настоящая.",
+  "cult.note":"Небольшая полевая заметка CargoGo — история, а не заявление о продукте.","cult.scene":"Стилизованная сцена полевой заметки"
+});
+
 const q = s => document.querySelector(s), qa = s => [...document.querySelectorAll(s)];
 const toast = q('#toast');
 function showToast(text){ toast.textContent=text; toast.classList.add('show'); clearTimeout(showToast.t); showToast.t=setTimeout(()=>toast.classList.remove('show'),2400); }
@@ -235,3 +260,34 @@ function applyTheme(theme){
 }
 applyTheme(document.documentElement.dataset.theme||'dark');
 if(themeToggle) themeToggle.addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
+
+// Cargo Cult field note — opens deliberately, stays out of the main product flow.
+(() => {
+  const trigger=document.getElementById('cultTrigger');
+  const card=document.getElementById('cultCard');
+  const backdrop=document.getElementById('cultBackdrop');
+  const close=document.getElementById('cultClose');
+  if(!trigger||!card||!backdrop||!close) return;
+  let lastFocus=null;
+  const open=()=>{
+    lastFocus=document.activeElement;
+    card.classList.add('open');backdrop.classList.add('open');
+    card.setAttribute('aria-hidden','false');backdrop.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    close.focus({preventScroll:true});
+  };
+  const shut=()=>{
+    card.classList.remove('open');backdrop.classList.remove('open');
+    card.setAttribute('aria-hidden','true');backdrop.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    lastFocus?.focus?.({preventScroll:true});
+  };
+  trigger.addEventListener('click',open);
+  close.addEventListener('click',shut);
+  backdrop.addEventListener('click',shut);
+  window.addEventListener('keydown',e=>{if(e.key==='Escape'&&card.classList.contains('open'))shut();});
+  // Soft entrance after the page has settled; no auto-opening modal.
+  const reveal=()=>trigger.classList.add('ready');
+  if(document.readyState==='complete') setTimeout(reveal,1500);
+  else window.addEventListener('load',()=>setTimeout(reveal,1500),{once:true});
+})();

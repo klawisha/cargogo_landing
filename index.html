@@ -220,6 +220,58 @@
     <div class="drawer-foot"><img src="assets/brand-icon.png" alt="" /><span>CargoGo / 2026</span></div>
   </aside>
 
+
+  <button class="cult-trigger" id="cultTrigger" type="button" aria-haspopup="dialog" aria-controls="cultCard">
+    <span class="cult-trigger-mark"><i></i></span>
+    <span><small data-i18n="cult.triggerTop">FIELD NOTE</small><strong data-i18n="cult.trigger">Cargo cult?</strong></span>
+    <b>↗</b>
+  </button>
+
+  <div class="cult-backdrop" id="cultBackdrop" aria-hidden="true"></div>
+  <section class="cult-card" id="cultCard" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cultTitle">
+    <button class="cult-close" id="cultClose" type="button" aria-label="Close">×</button>
+    <div class="cult-copy">
+      <div class="cult-kicker"><span></span><b data-i18n="cult.kicker">FIELD NOTE / 07</b></div>
+      <h2 id="cultTitle"><span data-i18n="cult.title1">The curious story</span><br><em data-i18n="cult.title2">behind “cargo cult”.</em></h2>
+      <p data-i18n="cult.p1">“Cargo cult” is an anthropological label associated with several Melanesian movements of the 20th century. Contact with colonial systems, military bases and huge flows of unfamiliar goods sometimes became part of new ritual and political movements.</p>
+      <p data-i18n="cult.p2">The famous image of improvised runways, towers or aircraft built to make the cargo return is a popular shorthand — memorable, but much simpler than the real histories behind those movements.</p>
+      <div class="cult-quote"><span>“</span><p data-i18n="cult.quote">Symbols can imitate logistics.<br><strong>CargoGo is built to make the real thing work.</strong></p></div>
+      <p class="cult-footnote" data-i18n="cult.note">A small CargoGo field note — history, not a product claim.</p>
+    </div>
+    <div class="cult-scene" aria-hidden="true">
+      <svg viewBox="0 0 720 580" role="img">
+        <defs>
+          <linearGradient id="cultSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1018"/><stop offset="1" stop-color="#14100d"/></linearGradient>
+          <radialGradient id="cultGlow"><stop offset="0" stop-color="#ff7a20" stop-opacity=".65"/><stop offset="1" stop-color="#ff7a20" stop-opacity="0"/></radialGradient>
+          <linearGradient id="cultHill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#182027"/><stop offset="1" stop-color="#090c0f"/></linearGradient>
+        </defs>
+        <rect width="720" height="580" fill="url(#cultSky)"/>
+        <circle cx="550" cy="108" r="58" fill="#d7d2c8" opacity=".08"/>
+        <circle cx="548" cy="106" r="42" fill="#d7d2c8" opacity=".06"/>
+        <g class="cult-stars" fill="#ece8df"><circle cx="92" cy="78" r="1.6"/><circle cx="176" cy="124" r="1.2"/><circle cx="326" cy="68" r="1.5"/><circle cx="405" cy="142" r="1.1"/><circle cx="620" cy="72" r="1.3"/></g>
+        <g class="cult-plane">
+          <path d="M-22 0 L54 -5 L96 -30 L109 -27 L84 -2 L138 2 L153 13 L83 13 L102 38 L91 40 L55 14 L-22 12 Z" fill="#242b31" stroke="#ff7620" stroke-opacity=".45" stroke-width="1.4"/>
+          <circle class="cult-plane-light" cx="145" cy="9" r="5" fill="#ff7620"/>
+        </g>
+        <path d="M0 350 C120 292 205 322 306 286 C420 247 516 306 720 240 L720 580 L0 580 Z" fill="url(#cultHill)"/>
+        <path d="M0 414 C160 360 252 405 393 350 C500 308 607 360 720 325 L720 580 L0 580 Z" fill="#0a0d10" opacity=".96"/>
+        <g class="cult-tower" transform="translate(475 254)" stroke="#6b4a33" stroke-width="8" stroke-linecap="round"><path d="M0 112 L24 0 L48 112 M8 80 H40 M13 52 H35 M18 25 H30"/><path d="M7 4 H41"/></g>
+        <g class="cult-runway" stroke="#a05b2d" stroke-width="5" stroke-linecap="round" opacity=".55"><path d="M112 482 L585 414"/><path d="M148 498 L616 433"/></g>
+        <g fill="#ff7620" opacity=".75"><circle cx="168" cy="474" r="4"/><circle cx="252" cy="460" r="4"/><circle cx="338" cy="447" r="4"/><circle cx="430" cy="434" r="4"/><circle cx="523" cy="420" r="4"/></g>
+        <g class="cult-fire" transform="translate(390 430)">
+          <circle class="cult-fire-glow" cx="0" cy="16" r="92" fill="url(#cultGlow)"/>
+          <path class="flame flame-a" d="M0 42 C-24 23 -18 3 -4 -17 C2 -4 8 2 14 -17 C31 5 27 26 0 42 Z" fill="#ff7420"/>
+          <path class="flame flame-b" d="M0 35 C-9 19 -4 8 3 -5 C14 9 16 23 0 35 Z" fill="#ffd06a"/>
+          <path d="M-27 44 L26 58 M27 44 L-27 58" stroke="#503222" stroke-width="9" stroke-linecap="round"/>
+          <g class="cult-smoke" fill="#a3a7aa"><circle cx="6" cy="-38" r="9" opacity=".11"/><circle cx="-5" cy="-66" r="13" opacity=".08"/><circle cx="8" cy="-99" r="17" opacity=".05"/></g>
+        </g>
+        <g class="cult-figures" fill="#07090b" opacity=".92"><circle cx="327" cy="468" r="10"/><path d="M318 478 L308 530 L338 530 L335 480 Z"/><circle cx="461" cy="462" r="10"/><path d="M452 473 L444 526 L473 526 L470 474 Z"/></g>
+        <g class="cult-sign" transform="translate(80 340)"><rect width="185" height="92" rx="7" fill="#11161a" stroke="#ff7620" stroke-opacity=".24"/><text x="21" y="38" fill="#7c858d" font-size="12" letter-spacing="3">FIELD NOTE</text><text x="21" y="68" fill="#f0ede6" font-size="23" font-weight="700">CARGO / CULT</text></g>
+      </svg>
+      <div class="cult-scene-caption"><span data-i18n="cult.scene">A stylized field-note scene</span><i></i><b>CG / ARCHIVE</b></div>
+    </div>
+  </section>
+
   <div class="toast" id="toast" role="status"></div>
   <script src="app.js"></script>
 </body>

@@ -20,3 +20,6 @@ Framework preset: **Other**. No build command is required. Deploy the contents o
 
 ## Store/direct links
 Update `CONFIG` at the top of `app.js`. Direct APK/IPA placeholders live in `downloads/`.
+
+## v5.4 — Cargo Cult field note
+A restrained floating field-note easter egg was added to the landing page. It opens on demand (never as an automatic modal), supports EN/UA/RU, uses a lightweight inline SVG scene with subtle fire/smoke/aircraft motion, respects reduced-motion preferences, and collapses into a mobile bottom sheet.
